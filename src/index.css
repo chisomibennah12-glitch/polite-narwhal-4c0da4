@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  background: #0A0E1A;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #0A0E1A;
+  color: #f8fafc;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(239, 28, 38, 0.35);
+}
+
+.film-grain {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.22) 0.5px, transparent 0.8px),
+    radial-gradient(rgba(0,0,0,0.18) 0.7px, transparent 0.9px);
+  background-size: 8px 8px;
+  background-position: 0 0, 4px 4px;
+  animation: grainShift 0.35s steps(2) infinite;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-8%, 5%); }
+  50% { transform: translate(10%, -10%); }
+  75% { transform: translate(8%, 8%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes confetti {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  10% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(180px) scale(0.8) rotate(180deg); }
+}
+
+@keyframes ring {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  50% { transform: rotate(-12deg); }
+  75% { transform: rotate(8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-ring {
+  animation: ring 0.5s ease-in-out;
+}
+
